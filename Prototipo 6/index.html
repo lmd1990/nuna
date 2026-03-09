@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Nuna Cerámica | Piezas únicas hechas a mano</title>
+
+  <link rel="icon" type="image/png" href="favicon.ico.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Nuna Cerámica crea piezas únicas hechas a mano: tazas, cuencos, hornillos, floreros y objetos para el hogar con identidad artesanal.">
+
+  <meta name="keywords" content="cerámica artesanal, piezas hechas a mano, cerámica argentina, cerámica artística, nuna cerámica">
+
+  <meta name="author" content="Nuna Cerámica">
+
+  <style>
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f2ec;
+      color: #2f2a26;
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246, 242, 236, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e4d9cd;
+    }
+
+    .header-inner {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .logo {
+      width: 78px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 6px;
+    }
+
+    .brand-text p {
+      font-size: 1rem;
+      color: #6d635a;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #3f3731;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #a1643b;
+    }
+
+    .hero {
+      padding: 42px 0 18px;
+    }
+
+    .hero-box {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      background: linear-gradient(135deg, #ece3d8, #e4d6c7);
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .hero-content {
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #7c6b5d;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .hero-content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+      line-height: 1.03;
+      margin-bottom: 20px;
+      max-width: 520px;
+    }
+
+    .hero-content p {
+      max-width: 540px;
+      font-size: 1.06rem;
+      color: #554c45;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: bold;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: #a1643b;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #8b522d;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border-color: #9c8a7a;
+      color: #4b4138;
+      background: rgba(255,255,255,0.25);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.5);
+    }
+
+    .hero-gallery {
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-content: center;
+    }
+
+    .hero-card {
+      aspect-ratio: 1 / 1;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #d9c8b8;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .section {
+      padding: 78px 0 16px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      line-height: 1.08;
+    }
+
+    .section-subtitle {
+      color: #6e645b;
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .value-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .value-item {
+      background: #fffdf9;
+      border: 1px solid #eadfd3;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.03);
+    }
+
+    .value-item h3 {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+
+    .value-item p {
+      color: #645a52;
+      font-size: 0.95rem;
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .collection-card {
+      background: #fffdf9;
+      border: 1px solid #eadfd3;
+      border-radius: 24px;
+      padding: 26px 22px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+      transition: 0.2s ease;
+    }
+
+    .collection-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .collection-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+    }
+
+    .collection-card p {
+      color: #645a52;
+      font-size: 0.95rem;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .featured-card {
+      background: #fffdf9;
+      border: 1px solid #eadfd3;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+    }
+
+    .featured-image {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #dcc9b7;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .featured-card:hover .featured-image img {
+      transform: scale(1.04);
+    }
+
+    .featured-body {
+      padding: 18px;
+    }
+
+    .featured-body h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .featured-body p {
+      color: #665c54;
+      font-size: 0.94rem;
+      margin-bottom: 14px;
+    }
+
+    .about-box {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 24px;
+    }
+
+    .about-left,
+    .about-right {
+      border-radius: 28px;
+      overflow: hidden;
+    }
+
+    .about-left {
+      background: #dfcfbf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      min-height: 340px;
+    }
+
+    .about-left img {
+      width: 210px;
+      height: auto;
+    }
+
+    .about-right {
+      background: #fffdf9;
+      border: 1px solid #eadfd3;
+      padding: 36px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+    }
+
+    .about-right p {
+      color: #574e47;
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .contact-box {
+      background: #2f2a26;
+      color: white;
+      border-radius: 30px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .contact-box p {
+      color: #ddd1c4;
+      margin-top: 8px;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-actions .btn-secondary {
+      color: white;
+      border-color: #8b7866;
+      background: transparent;
+    }
+
+    footer {
+      border-top: 1px solid #e4d9cd;
+      padding: 30px 0 40px;
+      color: #786d63;
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    .footer-col h4 {
+      color: #2f2a26;
+      margin-bottom: 10px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      color: #786d63;
+      font-size: 0.95rem;
+    }
+
+    .footer-col a:hover {
+      color: #a1643b;
+    }
+
+    .footer-bottom {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid #e4d9cd;
+      color: #988d83;
+      font-size: 0.9rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      background: #25d366;
+      color: white;
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-weight: bold;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.18);
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1100px) {
+      .collections-grid,
+      .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .value-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .header-inner,
+      .hero-box,
+      .about-box,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 18px;
+      }
+
+      .hero-content h2 {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-gallery,
+      .collections-grid,
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        width: 62px;
+      }
+
+      .brand-text h1 {
+        font-size: 1.2rem;
+      }
+
+      .hero-content {
+        padding: 34px 24px;
+      }
+
+      .hero-content h2 {
+        font-size: 1.9rem;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+
+      .contact-box {
+        padding: 28px 22px;
+      }
+    }
+    .catalog-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+margin-top:30px;
+}
+
+.pieza{
+background:#fffdf9;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+transition:all .25s ease;
+}
+
+.pieza:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 35px rgba(0,0,0,0.08);
+}
+
+.pieza img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.pieza-info{
+padding:18px;
+}
+
+.pieza-info h3{
+margin-bottom:8px;
+font-size:1.1rem;
+}
+
+.pieza-info p{
+color:#666;
+font-size:.9rem;
+margin-bottom:14px;
+}
+
+.pieza-info a{
+display:inline-block;
+background:#a1643b;
+color:white;
+padding:10px 16px;
+border-radius:999px;
+font-size:.85rem;
+text-decoration:none;
+}
+
+.pieza-info a:hover{
+background:#8d542f;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="logo-ok.png" alt="Logo de Nuna Cerámica" class="logo">
+        <div class="brand-text">
+          <h1>Nuna Cerámica</h1>
+          <p>Piezas únicas hechas a mano</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#colecciones">Colecciones</a>
+        <a href="#destacadas">Productos</a>
+        <a href="#sobre-nuna">Sobre Nuna</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-box">
+          <div class="hero-content">
+            <div class="eyebrow">Desde un gesto lento y de intimidad con la pieza</div>
+            <h2>Cerámica con memoria</h2>
+            <p>
+              Nuna te invita, a través de sus obras, a bajar el ritmo y contemplar.
+              Cada pieza lleva huellas del pasado y transporta identidad.
+              Están creadas para habitar tu espacio con belleza real.
+            </p>
+
+            <div class="hero-buttons">
+              <a class="btn btn-primary" href="#destacadas">Ver piezas</a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/nunaceramicas/" target="_blank">Ir a Instagram</a>
+            </div>
+          </div>
+
+          <div class="hero-gallery">
+            <div class="hero-card">
+              <img src="img/producto1.png" alt="Pieza de cerámica Nuna 1" loading="lazy">
+            </div>
+            <div class="hero-card">
+              <img src="img/producto2.png" alt="Pieza de cerámica Nuna 2" loading="lazy">
+            </div>
+            <div class="hero-card">
+              <img src="img/producto3.png" alt="Pieza de cerámica Nuna 3" loading="lazy">
+            </div>
+            <div class="hero-card">
+              <img src="img/producto4.png" alt="Pieza de cerámica Nuna 4" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="value-strip">
+          <div class="value-item">
+            <h3>Hecho a mano</h3>
+            <p>Cada pieza nace desde el trabajo manual y la sensibilidad del material.</p>
+          </div>
+          <div class="value-item">
+            <h3>Piezas únicas</h3>
+            <p>No hay dos iguales. Cada objeto tiene su propia presencia, forma y detalle.</p>
+          </div>
+          <div class="value-item">
+            <h3>Encargos y consultas</h3>
+            <p>También se pueden consultar piezas disponibles o trabajos especiales por mensaje.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="colecciones">
+      <div class="container">
+        <h2 class="section-title">Colecciones y tipos de piezas</h2>
+        <p class="section-subtitle">
+          Aunque cada objeto sea único, la marca puede organizarse en universos para mostrar mejor su identidad.
+        </p>
+
+        <div class="collections-grid">
+          <div class="collection-card">
+            <h3>Para la mesa</h3>
+            <p>Tazas, cuencos, jarros y piezas pensadas para acompañar lo cotidiano con una estética natural.</p>
+          </div>
+
+          <div class="collection-card">
+            <h3>Para obsequiar</h3>
+            <p>Objetos con presencia y valor simbólico, ideales para obsequios con identidad.</p>
+          </div>
+
+          <div class="collection-card">
+            <h3>Para el hogar</h3>
+            <p>Floreros, hornillos y objetos que suman calidez, textura y belleza a los espacios.</p>
+          </div>
+
+          <div class="collection-card">
+            <h3>Piezas especiales</h3>
+            <p>Trabajos únicos o a pedido, con mayor protagonismo visual y un carácter singular.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo">
+
+<div class="container">
+
+<h2 class="section-title">Últimas piezas</h2>
+
+<p class="section-subtitle">
+Cada nuna es única. Estas son algunas piezas recientes.
+</p>
+
+<div class="catalog-grid">
+
+<!-- PIEZA 1 -->
+
+<article class="pieza">
+
+<img src="img/producto1.png" alt="Pieza Nuna">
+
+<div class="pieza-info">
+
+<h3>Tetera artesanal</h3>
+
+<p>Pieza única hecha a mano.</p>
+
+<a href="https://www.instagram.com/nunaceramicas/" target="_blank">
+Consultar
+</a>
+
+</div>
+
+</article>
+
+<!-- PIEZA 2 -->
+
+<article class="pieza">
+
+<img src="img/producto2.png" alt="Pieza Nuna">
+
+<div class="pieza-info">
+
+<h3>Objeto cerámico</h3>
+
+<p>Trabajo artesanal con textura orgánica.</p>
+
+<a href="https://www.instagram.com/nunaceramicas/" target="_blank">
+Consultar
+</a>
+
+</div>
+
+</article>
+
+<!-- PIEZA 3 -->
+
+<article class="pieza">
+
+<img src="img/producto3.png" alt="Pieza Nuna">
+
+<div class="pieza-info">
+
+<h3>Hornillo</h3>
+
+<p>Pieza para aromaterapia.</p>
+
+<a href="https://www.instagram.com/nunaceramicas/" target="_blank">
+Consultar
+</a>
+
+</div>
+
+</article>
+
+<!-- PIEZA 4 -->
+
+<article class="pieza">
+
+<img src="img/producto4.png" alt="Pieza Nuna">
+
+<div class="pieza-info">
+
+<h3>Cuenco</h3>
+
+<p>Cerámica artesanal.</p>
+
+<a href="https://www.instagram.com/nunaceramicas/" target="_blank">
+Consultar
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+<section class="section" id="destacadas">
+      <div class="container">
+        <h2 class="section-title">Piezas destacadas</h2>
+        <p class="section-subtitle">
+          Una selección visual para mostrar el universo de Nuna con fotos reales de su trabajo.
+        </p>
+
+        <div class="featured-grid">
+          <article class="featured-card">
+            <div class="featured-image">
+              <img src="img/producto1.png" alt="Pieza destacada Nuna 1">
+            </div>
+            <div class="featured-body">
+              <h3>Serie artesanal</h3>
+              <p>Pieza con impronta orgánica, presencia visual y trabajo manual sensible.</p>
+              <a class="btn btn-primary" href="https://www.instagram.com/nunaceramicas/" target="_blank">Consultar en Instagram</a>
+            </div>
+          </article>
+
+          <article class="featured-card">
+            <div class="featured-image">
+              <img src="img/producto2.png" alt="Pieza destacada Nuna 2">
+            </div>
+            <div class="featured-body">
+              <h3>Objeto para el hogar</h3>
+              <p>Diseño artesanal pensado para habitar espacios con más calidez e identidad.</p>
+              <a class="btn btn-primary" href="https://www.instagram.com/nunaceramicas/" target="_blank">Consultar en Instagram</a>
+            </div>
+          </article>
+
+          <article class="featured-card">
+            <div class="featured-image">
+              <img src="img/producto3.png" alt="Pieza destacada Nuna 3">
+            </div>
+            <div class="featured-body">
+              <h3>Pieza única</h3>
+              <p>Trabajo singular donde materia, forma y detalle se encuentran en equilibrio.</p>
+              <a class="btn btn-primary" href="https://www.instagram.com/nunaceramicas/" target="_blank">Consultar en Instagram</a>
+            </div>
+          </article>
+
+          <article class="featured-card">
+            <div class="featured-image">
+              <img src="img/producto4.png" alt="Pieza destacada Nuna 4">
+            </div>
+            <div class="featured-body">
+              <h3>Colección Nuna</h3>
+              <p>Una muestra del lenguaje visual de la marca y de su búsqueda artesanal propia.</p>
+              <a class="btn btn-primary" href="https://www.instagram.com/nunaceramicas/" target="_blank">Consultar en Instagram</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre-nuna">
+      <div class="container">
+        <div class="about-box">
+          <div class="about-left">
+            <img src="logo-ok.png" alt="Logo de Nuna Cerámica">
+          </div>
+
+          <div class="about-right">
+            <h2 class="section-title">Sobre Nuna</h2>
+            <p>
+              Nuna Cerámica es un universo de piezas hechas a mano, con identidad,
+              forma y una búsqueda estética propia.
+            </p>
+            <p>
+              Cada objeto nace desde el trabajo manual, el vínculo con el material
+              y el valor de lo único. No se trata solo de objetos utilitarios:
+              se trata de piezas con presencia.
+            </p>
+            <p>
+              Más adelante, este texto puede tomar la historia real de la marca,
+              el recorrido de la alfarera y el sentido detrás de cada colección.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <h2>Contactá a Nuna</h2>
+            <p>Consultas, encargos, piezas disponibles y novedades.</p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/nunaceramicas/" target="_blank">Instagram</a>
+            <a class="btn btn-secondary" href="https://wa.me/5491124561306?text=Hola%20Nuna%20Cer%C3%A1mica%2C%20quiero%20hacer%20una%20consulta." target="_blank">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Nuna Cerámica</h4>
+          <p>Piezas únicas hechas a mano para usar, regalar y habitar el hogar con identidad.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Secciones</h4>
+          <p><a href="#colecciones">Colecciones</a></p>
+          <p><a href="#destacadas">Productos</a></p>
+          <p><a href="#sobre-nuna">Sobre Nuna</a></p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p><a href="https://www.instagram.com/nunaceramicas/" target="_blank">@nunaceramicas</a></p>
+          <p><a href="https://wa.me/5491124561306?text=Hola%20Nuna%20Cer%C3%A1mica%2C%20quiero%20hacer%20una%20consulta." target="_blank">Escribir por WhatsApp</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        Nuna Cerámica · Prototipo web v6
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5491124561306?text=Hola%20Nuna%20Cer%C3%A1mica%2C%20quiero%20hacer%20una%20consulta." target="_blank">
+    WhatsApp
+  </a>
+
+</body>
+</html>
